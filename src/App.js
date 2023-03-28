@@ -1,24 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route } from 'react-router-dom'
+import CreateCard from './components/CreateCard';
+import AllCards from './components/AllCards';
+import History from './components/History.js';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // <Provider store={store}>
+      <div>
+      <Navbar />
+        <Routes>
+          <Route path='/' element={<CreateCard/>} />
+          <Route path='/all-cards' element={<AllCards/>} />
+          <Route path='/history' element={<History />} />
+        </Routes>
+      </div>
+    // </Provider>
   );
 }
 
